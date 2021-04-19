@@ -16,7 +16,7 @@ public class MainPage {
     WebElement enterPassword;
 
     @FindBy(id = "login-button")
-    WebElement login_button;
+    WebElement loginButton;
 
     public MainPage(WebDriver driver){
         this.driver = driver;
@@ -26,7 +26,7 @@ public class MainPage {
     public void logIn(){
         enterUsername.sendKeys("standard_user");
         enterPassword.sendKeys("secret_sauce");
-        login_button.click();
+        loginButton.click();
     }
 
     public String getUrl() {

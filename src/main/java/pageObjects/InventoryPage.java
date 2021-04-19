@@ -22,11 +22,14 @@ public class InventoryPage {
         PageFactory.initElements(driver,this);
     }
 
-    public void addItems() {
+    public String addItems() {
         for (WebElement item:toBeAddedList){
             item.click();
         }
-        Assert.assertEquals(numberOnCart.getText(),"6");
+        return numberOnCart.getText();
+    }
+    public void enterCart(){
         numberOnCart.click();
+
     }
 }

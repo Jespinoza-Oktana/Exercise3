@@ -26,8 +26,11 @@ public class TestExercise3 extends Base {
     @Test(dataProvider = "checkout data", dataProviderClass = DataProvider.class)
     @Description("Test of the Exercise 3")
     public void testExercise3 (String firstName,String lastName, String postalCode) {
+        String items;
         mainPage.logIn();
-        inventoryPage.addItems();
+        items = inventoryPage.addItems();
+        Assert.assertEquals(items,"6");
+        inventoryPage.enterCart();
         shoppingCartPage.checkPrice();
         checkoutStep1Page.sendInformation(firstName,lastName,postalCode);
         Assert.assertEquals(checkoutStep1Page.subTotalprice(),"$129.94");
